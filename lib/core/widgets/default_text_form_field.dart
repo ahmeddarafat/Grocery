@@ -39,7 +39,7 @@ class DefaultTextFormField extends StatefulWidget {
 }
 
 class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
-  bool showPassowrd = false;
+  bool showPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -47,32 +47,31 @@ class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
       textCapitalization: TextCapitalization.sentences,
       maxLines: 1,
       maxLength: widget.maxlenght,
-      obscureText: !showPassowrd,
+      obscureText: widget.isPassword?showPassword:false,
       keyboardType: widget.keyboardtype,
       controller: widget.textEditingController,
       style: Theme.of(context).textTheme.subtitle1,
       decoration: InputDecoration(
-          fillColor: AppColors.grey,
-          filled: true,
-          hintText: widget.hint,
-          hintStyle: Theme.of(context).textTheme.subtitle2,
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(14),
-              borderSide: const BorderSide(
-                color: Colors.grey,
-                width: 0,
-              )),
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
-          prefixIcon: widget.showprefixIcon
-              ? Icon(
-                  widget.prefixIcon,
-                  size: 22,
-                  // color: AppColors.orange,
-                )
-              : null,
-          suffixIcon: getSuffixIcon(),
-          ),
+        fillColor: AppColors.grey,
+        filled: true,
+        hintText: widget.hint,
+        hintStyle: Theme.of(context).textTheme.subtitle2,
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: const BorderSide(
+              color: Colors.grey,
+              width: 0,
+            )),
+        contentPadding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+        prefixIcon: widget.showprefixIcon
+            ? Icon(
+                widget.prefixIcon,
+                size: 22,
+                // color: AppColors.orange,
+              )
+            : null,
+        suffixIcon: getSuffixIcon(),
+      ),
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: widget.validator,
     );
@@ -87,13 +86,14 @@ class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
         );
       }
       return InkWell(
-        onTap: (() {
-          setState(() {
-            showPassowrd = !showPassowrd;
-          });
-        }),
-        child: !showPassowrd ? const Icon(Icons.visibility) :const Icon(Icons.visibility_off)
-      );
+          onTap: (() {
+            setState(() {
+              showPassword = !showPassword;
+            });
+          }),
+          child: !showPassword
+              ? const Icon(Icons.visibility)
+              : const Icon(Icons.visibility_off));
     }
     return null;
   }

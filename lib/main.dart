@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uccd_flutter/core/style/themes.dart';
 import 'package:uccd_flutter/ui/get_started_page.dart';
-import 'package:uccd_flutter/ui/login_page.dart';
+import 'package:uccd_flutter/ui/auth/login_page.dart';
 
 void main() {
   /// to make splash screen static to test it
@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         (BuildContext context, Orientation orientation, DeviceType deviceType) {
       return MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme: Apptheme.lightTheme,
         home: GetStartedPage(),

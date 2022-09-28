@@ -8,15 +8,14 @@ import 'package:uccd_flutter/core/resources/navigators.dart';
 import 'package:uccd_flutter/core/style/colors.dart';
 import 'package:uccd_flutter/core/widgets/default_eleveted_button.dart';
 import 'package:uccd_flutter/core/widgets/default_text_form_field.dart';
-import 'package:uccd_flutter/ui/login_page.dart';
+import 'package:uccd_flutter/ui/auth/sign_up_page.dart';
+import 'package:uccd_flutter/ui/home/bottom_navigation_bar.dart';
 
-class SignUpPage extends StatelessWidget {
-  SignUpPage({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
   final emailController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
   final passwordController = TextEditingController();
 
   bool showPassword = false;
@@ -24,7 +23,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: signUpAppBar(context),
+      appBar: signInAppBar(context),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -38,36 +37,26 @@ class SignUpPage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Center(
-                      child: SvgPicture.asset(AppAssets.signUP, height: 22.h)),
+                      child: SvgPicture.asset(AppAssets.login, height: 28.h)),
                   SizedBox(
                     height: 4.h,
                   ),
                   Text(
-                    'Hello !',
+                    'Enter your Email and password',
                     style: Theme.of(context)
                         .textTheme
                         .headline1
-                        ?.copyWith(fontSize: 20.sp,letterSpacing: 3),
+                        ?.copyWith(fontSize: 16.sp),
                   ),
                   SizedBox(
                     height: 1.h,
                   ),
                   Text(
-                    "For the security & safety please choose a password",
-                    textAlign: TextAlign.start,
+                    "To continue ...",
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   SizedBox(
                     height: 2.h,
-                  ),
-                  DefaultTextFormField(
-                     hint: "User name",
-                    textEditingController: nameController,
-                      validator: (value){
-                        return null;
-                      }),
-                      SizedBox(
-                    height: 1.h,
                   ),
                   DefaultTextFormField(
                     hint: 'email',
@@ -88,35 +77,32 @@ class SignUpPage extends StatelessWidget {
                     showSuffixIcon: true,
                     isPassword: true,
                   ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: TextButton(
+                        onPressed: () {},
+                        child: const Text("Forget Password?")),
+                  ),
                   SizedBox(
                     height: 1.h,
                   ),
-                  DefaultTextFormField(
-                    hint: 'ConFirm Password',
-                    textEditingController: confirmPasswordController,
-                    validator: (value) {
-                      return null;
-                    },
-                    showSuffixIcon: true,
-                    isPassword: true,
-                  ),
-                  SizedBox(
-                    height: 2.h,
-                  ),
                   DefaultElevetedButton(
-                    title: "Sign Un",
-                    onPressed: () {},
+                    title: "Sign In",
+                    onPressed: () {
+                      Navigators.naviagteReplacementTo(
+                              context, OwnBottomNavigationBar());
+                    },
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("I already have an account ?"),
+                      Text("Don't have an account ?"),
                       TextButton(
                         onPressed: () {
                           Navigators.naviagteReplacementTo(
-                              context, LoginPage());
+                              context, SignUpPage());
                         },
-                        child: Text('Sign In'),
+                        child: Text('Sign Up'),
                       ),
                     ],
                   )
@@ -129,11 +115,11 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
-  /// method helpers
+  /// Method helpers
 
-    AppBar signUpAppBar(BuildContext context) {
+    AppBar signInAppBar(BuildContext context) {
       return AppBar(
-        title: Text('Sign Up',
+        title: Text('Sign In',
             style: Theme.of(context)
                 .textTheme
                 .headline1!

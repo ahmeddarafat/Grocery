@@ -7,6 +7,7 @@ class Apptheme {
     scaffoldBackgroundColor: AppColors.white,
     colorScheme: const ColorScheme.light(
       primary: AppColors.orange,
+      secondary: AppColors.brawn
     ),
     textTheme: TextTheme(
       /// the headline text
