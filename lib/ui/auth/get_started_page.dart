@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uccd_flutter/core/resources/navigators.dart';
-import 'package:uccd_flutter/core/widgets/default_eleveted_button.dart';
-import 'package:uccd_flutter/core/widgets/default_outline_button.dart';
+import 'package:uccd_flutter/core/widgets/global/default_eleveted_button.dart';
+import 'package:uccd_flutter/core/widgets/global/default_outline_button.dart';
 import 'package:uccd_flutter/ui/auth/login_page.dart';
 import 'package:uccd_flutter/ui/auth/sign_up_page.dart';
 
@@ -16,6 +16,7 @@ class GetStartedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(toolbarHeight: 0,),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 5.h),
           child: Center(

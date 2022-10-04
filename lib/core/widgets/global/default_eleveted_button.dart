@@ -19,13 +19,14 @@ class DefaultElevetedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
+          
           backgroundColor: AppColors.orange,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
         child: Padding(
-          padding:  EdgeInsets.symmetric(vertical: 1.h),
-          child: Text(title, style: TextStyle(fontSize: 12.sp)),
+          padding:  EdgeInsets.symmetric(vertical: 1.25.h),
+          child: Text(title, style: TextStyle(fontSize: 14.sp)),
         ),
       ),
     );

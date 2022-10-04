@@ -4,8 +4,8 @@ import 'package:uccd_flutter/core/style/colors.dart';
 
 class DefaultTextFormField extends StatefulWidget {
   final String hint;
-  final FormFieldValidator<String> validator;
-  final TextEditingController textEditingController;
+  final FormFieldValidator<String>? validator;
+  final TextEditingController controller;
   final TextInputType keyboardtype;
   final IconData prefixIcon;
   final IconData suffixIcon;
@@ -20,7 +20,7 @@ class DefaultTextFormField extends StatefulWidget {
   const DefaultTextFormField({
     Key? key,
     required this.hint,
-    required this.textEditingController,
+    required this.controller,
     required this.validator,
     this.isPassword = false,
     this.showSuffixIcon = false,
@@ -43,31 +43,40 @@ class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    print('the widget text field is rebuilt');
     return TextFormField(
       textCapitalization: TextCapitalization.sentences,
       maxLines: 1,
       maxLength: widget.maxlenght,
-      obscureText: widget.isPassword?showPassword:false,
+      obscureText: widget.isPassword ? showPassword : false,
       keyboardType: widget.keyboardtype,
-      controller: widget.textEditingController,
+      controller: widget.controller,
       style: Theme.of(context).textTheme.subtitle1,
+      // TODO: Edit & Understand
+      // edit the color of border & understand inputDecoration widget
       decoration: InputDecoration(
         fillColor: AppColors.grey,
+        iconColor: AppColors.orange,
         filled: true,
         hintText: widget.hint,
         hintStyle: Theme.of(context).textTheme.subtitle2,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white, width: 0.0),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.white, width: 1),
+        ),
         border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide: const BorderSide(
-              color: Colors.grey,
-              width: 0,
-            )),
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.white, width: 1),
+        ),
         contentPadding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
         prefixIcon: widget.showprefixIcon
             ? Icon(
                 widget.prefixIcon,
                 size: 22,
-                // color: AppColors.orange,
+                color: AppColors.orange,
               )
             : null,
         suffixIcon: getSuffixIcon(),
@@ -83,6 +92,7 @@ class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
         return Icon(
           widget.suffixIcon,
           size: 22,
+          color: AppColors.orange,
         );
       }
       return InkWell(
