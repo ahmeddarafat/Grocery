@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:sizer/sizer.dart';
+import 'package:uccd_flutter/core/resources/constants_variables.dart';
 import 'package:uccd_flutter/core/style/colors.dart';
 import 'package:uccd_flutter/core/style/themes.dart';
 import 'package:uccd_flutter/core/widgets/global/categories_list.dart';
@@ -46,7 +47,7 @@ class _AllProductsPageState extends State<AllProductsPage> {
                 prefixIcon: Icons.search,
               ),
               SizedBox(height: 4.h),
-              CategoriesList(),
+              CategoriesList(list: categoriesList),
               SizedBox(height: 4.h),
               Expanded(
                 child: GridView.custom(

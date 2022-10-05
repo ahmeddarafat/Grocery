@@ -8,3 +8,9 @@ List<String> categoriesList = [
   "Meat",
   "Egg & Milk"
 ];
+
+List<String> orderList = [
+  'Ongoing',
+  'History'
+];
+

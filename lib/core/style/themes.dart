@@ -46,16 +46,32 @@ class AppStyle {
     fontWeight: FontWeight.bold,
     color: AppColors.brawn,
   );
+  static TextStyle headline2Brawn = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.brawn,
+  );
+  static TextStyle subtitle1 = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.brawn,
+  );
+  static TextStyle subtitle2Brawn = TextStyle(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.brawn,
+  );
   static TextStyle headline1Orange = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
     color: AppColors.orange,
   );
-  static TextStyle subtitle1 = TextStyle(
-    fontSize: 12.sp,
+  static TextStyle headline2Orange = TextStyle(
+    fontSize: 17.sp,
     fontWeight: FontWeight.w500,
-    color: AppColors.brawn,
+    color: AppColors.orange,
   );
+  
   static TextStyle subtitle2 = TextStyle(
     fontSize: 11.sp,
     fontWeight: FontWeight.w500,

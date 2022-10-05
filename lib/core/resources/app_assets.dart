@@ -11,6 +11,9 @@ class AppAssets {
   static const String noCards = "assets/images/nocards.svg";
   static const String grape = "assets/images/grape.png";
   static const String apple = "assets/images/apple.png";
+  static const String pickItem = "assets/images/pick_item.png";
+  static const String scooter = "assets/images/scooter.png";
+  static const String recieve = "assets/images/recieve.png";
 
   /// icons
   static const String applePay = "assets/icons/apple_pay.png";

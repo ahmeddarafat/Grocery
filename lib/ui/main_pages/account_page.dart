@@ -4,6 +4,7 @@ import 'package:uccd_flutter/core/resources/navigators.dart';
 import 'package:uccd_flutter/core/style/colors.dart';
 import 'package:uccd_flutter/core/style/themes.dart';
 import 'package:uccd_flutter/core/widgets/local/account_button.dart';
+import 'package:uccd_flutter/ui/subpages/account/order/order_layouts.dart';
 import 'package:uccd_flutter/ui/subpages/account/profile/profile_page.dart';
 
 class AccountPage extends StatelessWidget {
@@ -31,6 +32,7 @@ class AccountPage extends StatelessWidget {
             AccountButton(
               title: 'Order',
               icon: Icons.offline_bolt,
+              ontap: () => Navigators.naviagteTo(context, OrderLayouts()),
             ),
             AccountButton(
               title: 'Adress',
