@@ -27,7 +27,7 @@ class DefaultOutlineButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(12)),
         ),
         child: Padding(
-          padding:  EdgeInsets.symmetric(vertical: 1.h),
+          padding:  EdgeInsets.symmetric(vertical: 1.25.h),
           child: Text(title,style: TextStyle(fontSize: 12.sp)),
         ),
       ),

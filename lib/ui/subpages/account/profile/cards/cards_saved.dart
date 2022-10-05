@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uccd_flutter/core/resources/app_assets.dart';
 import 'package:uccd_flutter/core/resources/navigators.dart';
 import 'package:uccd_flutter/core/style/colors.dart';
 import 'package:uccd_flutter/core/style/themes.dart';
-import 'package:uccd_flutter/core/widgets/global/default_eleveted_button.dart';
+import 'package:uccd_flutter/core/widgets/local/account_button.dart';
 import 'package:uccd_flutter/ui/subpages/account/profile/cards/new_card.dart';
 
-class NoCardsPage extends StatelessWidget {
-  const NoCardsPage({super.key});
+class CardsSaved extends StatelessWidget {
+  const CardsSaved({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,34 +16,27 @@ class NoCardsPage extends StatelessWidget {
       appBar: appBarPage(context),
       body: SafeArea(
           child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 8.h),
               child: Column(
-                
                 children: [
-                  Center(
-                      child: SizedBox(
-                          height: 45.h,
-                          child: SvgPicture.asset(
-                            AppAssets.noCards,
-                            fit: BoxFit.contain,
-                          ))),
-                  SizedBox(
-                    height: 4.h,
+                  CardButton(
+                    title: "My Card",
+                    subtitle: "4323 **** **** 3432",
+                    url: AppAssets.visaPay,
+                    suffixIcon: Icons.arrow_forward_ios_outlined,
                   ),
-                  Text(
-                    "No Cards Saved",
-                    style: AppStyle.headline1Brawn,
+                  CardButton(
+                    title: "My Card",
+                    subtitle: "4323 **** **** 3432",
+                    url: AppAssets.visaPay,
+                    suffixIcon: Icons.arrow_forward_ios_outlined,
                   ),
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                  SizedBox(
-                    width: 60.w,
-                    child: Text(
-                      "You can save your card info to make purchase easier, faster.",
-                      style: AppStyle.subtitle1,
-                      textAlign: TextAlign.center,
-                    ),
+                  CardButton(
+                    title: "Apple Pay",
+                    subtitle: "",
+                    url: AppAssets.applePay,
+                    suffixIcon: Icons.done,
+                    iconColor: AppColors.orange,
                   ),
                 ],
               ),),),

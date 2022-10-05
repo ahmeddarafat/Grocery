@@ -5,6 +5,7 @@ import 'package:uccd_flutter/core/resources/navigators.dart';
 import 'package:uccd_flutter/core/style/colors.dart';
 import 'package:uccd_flutter/core/style/themes.dart';
 import 'package:uccd_flutter/core/widgets/local/account_button.dart';
+import 'package:uccd_flutter/ui/subpages/account/profile/cards/cards_saved.dart';
 import 'package:uccd_flutter/ui/subpages/account/profile/cards/no_cards_page.dart';
 import 'package:uccd_flutter/ui/subpages/account/profile/change_password/change_password.dart';
 import 'package:uccd_flutter/ui/subpages/account/profile/edit_profile/edit_profile.dart';
@@ -46,7 +47,7 @@ class ProfilePage extends StatelessWidget {
                 iconColor: AppColors.brawn,
                 suffixIcon: Icons.arrow_forward_ios_outlined,
                 ontap: () =>
-                    Navigators.naviagteTo(context, NoCardsPage()),
+                    Navigators.naviagteTo(context, CardsSaved()),
               ),
               Padding(
                 padding: EdgeInsets.all(8.0),

@@ -1,4 +1,6 @@
 class AppAssets {
+
+  /// images
   static const String getStartedPng = "assets/images/get_started.png";
   static const String getStartedSvg = "assets/images/get_started.svg";
   static const String login = "assets/images/login.svg";
@@ -9,4 +11,10 @@ class AppAssets {
   static const String noCards = "assets/images/nocards.svg";
   static const String grape = "assets/images/grape.png";
   static const String apple = "assets/images/apple.png";
+
+  /// icons
+  static const String applePay = "assets/icons/apple_pay.png";
+  static const String visaPay = "assets/icons/visa_pay.png";
+
+  
 }

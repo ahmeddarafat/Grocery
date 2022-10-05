@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uccd_flutter/core/style/colors.dart';
 
@@ -7,12 +6,13 @@ class Apptheme {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.white,
     appBarTheme: AppBarTheme(
-        elevation: 0,
-        centerTitle: true,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: AppColors.orange,
-          // statusBarIconBrightness: Brightness.light,
-        )),
+      elevation: 0,
+      centerTitle: true,
+      // systemOverlayStyle: SystemUiOverlayStyle(
+      //   statusBarColor: AppColors.orange,
+      // statusBarIconBrightness: Brightness.light,
+      // ),
+    ),
     colorScheme: const ColorScheme.light(
         primary: AppColors.orange, secondary: AppColors.brawn),
     textTheme: TextTheme(
@@ -71,5 +71,4 @@ class AppStyle {
     fontWeight: FontWeight.w500,
     color: AppColors.brawn,
   );
-
 }
